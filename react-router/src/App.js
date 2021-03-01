@@ -2,6 +2,9 @@ import React from "react";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import {Route, Link, BrowserRouter as Router, Switch, useHistory} from "react-router-dom";
+import Product from "./pages/Product";
+import NotFound from "./pages/NotFound";
+import Categories from "./pages/Categories";
 
 
 function Navigate() {
@@ -31,10 +34,19 @@ function App() {
                     <Link to="/terms">
                         <li>Terms</li>
                     </Link>
+                    <Link to="/product/123">
+                        <li>Product</li>
+                    </Link>
+                    <Link to="/categories">
+                        <li>Categories</li>
+                    </Link>
                 </ul>
                 <Switch>
                     <Route path="/contact" exact component={Contact}/>
                     <Route path="/terms" component={Terms}/>
+                    <Route path="/product/:id" component={Product}/>
+                    <Route path="/categories" component={Categories} />
+                    <Route component={NotFound}/>
                 </Switch>
                 <div>
                     this is a footer
